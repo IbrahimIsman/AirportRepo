@@ -32,7 +32,7 @@ public class AirportService {
 	
 	public Airport update(Integer id, Airport aeroplane) {
 		
-		Airport foundAeroplane = this.repo.getById(id);
+		Airport foundAeroplane = this.getById(id);
 		
 		foundAeroplane.setCapacity(aeroplane.getCapacity());
 		foundAeroplane.setPrice(aeroplane.getPrice());
