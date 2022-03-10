@@ -2,6 +2,7 @@ package com.qa.serviceTest;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.assertj.core.api.Assertions;
@@ -37,6 +38,22 @@ public class ServiceUnitTest {
 	    Mockito.verify(this.repo, Mockito.times(1)).save(Mockito.any(Airport.class));
 	
 	}
+	
+	@Test 
+	void getAllTest() {
+		
+		int id =1;
+		Airport plane = new Airport("Boeing 737-700", 160, 89.1f);
+		plane.setId(id);
+		List<Airport> planes = List.of(plane);
+		
+		Mockito.when(this.repo.findAll()).thenReturn(planes);
+		
+		Assertions.assertThat(this.service.getAll()).isEqualTo(planes);
+		
+		Mockito.verify(this.repo, Mockito.times(1)).findAll();
+	}
+	
 	
 	@Test
 	void getByIdTest() {
