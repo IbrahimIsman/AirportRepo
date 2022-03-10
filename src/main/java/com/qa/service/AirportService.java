@@ -30,6 +30,14 @@ public class AirportService {
 		return this.repo.findById(id).orElseThrow(() -> new IdNotFoundException("cant find the person"));
 	}
 	
+	public List<Airport> findPlaneByCapacity (int capacity){
+		return this.repo.findAirportByCapacitySQL(capacity);
+	}
+	
+	public List<Airport> findPlaneByPriceGreaterThan (float price){
+		return this.repo.findAirportByPriceGreaterThan(price);
+	}
+	
 	public Airport update(Integer id, Airport aeroplane) {
 		
 		Airport foundAeroplane = this.getById(id);

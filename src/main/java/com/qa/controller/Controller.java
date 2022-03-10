@@ -42,6 +42,16 @@ public class Controller {
 	    return new ResponseEntity<Airport> (this.airport.getById(id), HttpStatus.OK);
 	}
 	
+	@GetMapping("/findByCapacity/{capacity}")
+	public ResponseEntity<List<Airport>> findByCapacity (@PathVariable Integer capacity){
+		return new ResponseEntity<List<Airport>> (this.airport.findPlaneByCapacity(capacity), HttpStatus.OK);
+	}
+	
+	@GetMapping("/findByPriceGreaterThan/{price}")
+	public ResponseEntity<List<Airport>> findByPriceGreaterThan (@PathVariable float price){
+		return new ResponseEntity<List<Airport>> (this.airport.findPlaneByPriceGreaterThan(price), HttpStatus.OK);
+	}
+	
 	@PutMapping("/update/{id}")
 	public ResponseEntity<Airport> update (@PathVariable Integer id, @RequestBody Airport aeroplane){
         return new ResponseEntity<Airport> (this.airport.update(id, aeroplane), HttpStatus.ACCEPTED);
