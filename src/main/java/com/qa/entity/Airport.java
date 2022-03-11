@@ -23,6 +23,10 @@ public class Airport {
 	int capacity;
 	float price;
 	
+public Airport () {}
+
+
+
 
 	
 }
