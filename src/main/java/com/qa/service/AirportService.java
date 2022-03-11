@@ -32,7 +32,7 @@ public class AirportService {
 	
 	public Airport update(Integer id, Airport aeroplane) {
 		
-		Airport foundAeroplane = this.repo.getById(id);
+		Airport foundAeroplane = this.getById(id);
 		
 		foundAeroplane.setCapacity(aeroplane.getCapacity());
 		foundAeroplane.setPrice(aeroplane.getPrice());
@@ -44,7 +44,7 @@ public class AirportService {
 
 	public Boolean delete(Integer id) {
 		this.repo.deleteById(id);
-		return this.repo.existsById(id);
+		return !this.repo.existsById(id);
 		
 	}
 

@@ -43,7 +43,7 @@ public class Controller {
 	}
 	
 	@PutMapping("/update/{id}")
-	public ResponseEntity<Airport> update (@PathVariable Integer id, Airport aeroplane ){
+	public ResponseEntity<Airport> update (@PathVariable Integer id, @RequestBody Airport aeroplane){
         return new ResponseEntity<Airport> (this.airport.update(id, aeroplane), HttpStatus.ACCEPTED);
 	}
 	
