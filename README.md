@@ -1,4 +1,8 @@
 # AirportRepo
+
+This file includes the questions listed under documentation on the project, with screenshots of postman, MySql and the risk assessment at the bottom. I added Richard to my Jira so he should be able to view my boards and progress.
+
+
 Why are we doing this?
 
   In order to test whether we can make an application with basic crud functionality and test it.
@@ -65,7 +69,6 @@ Screenshot of your test results, including coverage report.
   Below is a screenshot of my test coverage which is at 68.7% :
 ![image](https://user-images.githubusercontent.com/97603706/157911029-d72f8a83-4fa9-4e86-b5e4-6ad0f6023d6d.png)
 
-Link to Jira Board - You must add your trainer(s) as collaborators also.
 
 Below I have attached a screenshot of my Risk assessment:
 ![image](https://user-images.githubusercontent.com/97603706/157914214-96d7710f-0826-4d18-87f1-5cf24eef3c69.png)
