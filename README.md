@@ -1,18 +1,27 @@
 # AirportRepo
 Why are we doing this?
 
+  In order to test whether we can make an application with basic crud functionality and test it.
 
 How I expected the challenge to go.
 
+  I expected the challenge to go fairly smoothly as we practiced it previously.
+
 What went well? / What didn't go as planned?
 
+  The basic crud functionality went well and the testing of it.
+
+  My merging with github went a little bit wrong toward the end as well as adding some of the stretch goals to my project like Lombock.
+
 Possible improvements for future revisions of the project.
+
+  Potentially a task that we will definitely face as a developer, not too sure.
 
 Screenshots showing your postman requests and the output from the API.
 
 Screenshots of your database to prove that data is being persisted.
 
-Below are screenshots of my postman requests and of Mysql command line showing data persisted. I coupled them together for ease of reading and to show the moving changes.
+  Below are screenshots of my postman requests and of Mysql command line showing data persisted. I coupled them together for ease of reading and to show the moving changes.
 
 Begining with the first method addToAirport:
 ![image](https://user-images.githubusercontent.com/97603706/157906795-bcd07337-4d88-48db-bfdd-8a84b5cdaa2a.png)
@@ -51,12 +60,9 @@ find by price greater than method:
 ![image](https://user-images.githubusercontent.com/97603706/157910908-d690f0f4-ab2c-41b9-9f84-2aab13d3a67d.png)
 
 
-
-
-
 Screenshot of your test results, including coverage report.
 
-Below is a screenshot of my test coverage which is at 68.7% :
+  Below is a screenshot of my test coverage which is at 68.7% :
 ![image](https://user-images.githubusercontent.com/97603706/157911029-d72f8a83-4fa9-4e86-b5e4-6ad0f6023d6d.png)
 
 Link to Jira Board - You must add your trainer(s) as collaborators also.
