@@ -68,6 +68,7 @@ public class ServiceUnitTest {
 		Mockito.verify(this.repo, Mockito.times(1)).findById(Mockito.anyInt());
 	}
 	
+
 	@Test
 	void deleteTest() {
 		int id = 1;
@@ -78,6 +79,34 @@ public class ServiceUnitTest {
 		
 		Mockito.verify(this.repo, Mockito.times(1)).deleteById(Mockito.anyInt());
 		Mockito.verify(this.repo, Mockito.times(1)).existsById(Mockito.anyInt());
+	}
+	
+	@Test
+	void deleteTestFalse() {
+		int id = 1;
+		
+		Mockito.when(this.repo.existsById(id)).thenReturn(true);
+		
+		Assertions.assertThat(this.service.delete(id)).isFalse();
+		
+		Mockito.verify(this.repo, Mockito.times(1)).deleteById(Mockito.anyInt());
+		Mockito.verify(this.repo, Mockito.times(1)).existsById(Mockito.anyInt());
+	}
+	
+	
+	@Test
+	void getByCapacityTest() {
+	
+		int Capacity =149;
+		Airport plane = new Airport("Boeing 737-700", 149, 89.1f);
+		plane.setCapacity(Capacity);
+		List<Airport> planes = List.of(plane);
+		
+		Mockito.when(this.repo.findAirportByCapacitySQL(Capacity)).thenReturn(planes);
+		
+		Assertions.assertThat(this.service.findPlaneByCapacity(Capacity)).isEqualTo(plane);
+	
+		Mockito.verify(this.repo, Mockito.times(1)).findAirportByCapacitySQL(Mockito.anyInt());
 	}
 	
 	@Test

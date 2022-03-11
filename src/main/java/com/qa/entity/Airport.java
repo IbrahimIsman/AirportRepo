@@ -7,6 +7,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
+
 @Entity
 public class Airport {
 
@@ -17,7 +18,7 @@ public class Airport {
 	int capacity;
 	float price;
 	
-	public Airport () {}
+	public Airport () {} 
 	
 	public Airport(String type, int capacity, float price) {
 		super();

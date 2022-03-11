@@ -65,11 +65,9 @@ public class ControllerIntegrationTest {
 		airportTable.add(new Airport(1, "Boeing 737-700", 149, 89.1f));
 		airportTable.add(new Airport(2, "Boeing 737 MAX 7", 172, 106.1f));
 		airportTable.add(new Airport(3, "Boeing 737-800", 189 , 89.1f));
-		
 		String airportTableJson = this.mapper.writeValueAsString(airportTable);
 	
 		RequestBuilder request = get("/getAll");
-		
 		ResultMatcher status = status().isOk();
 		ResultMatcher content = content().json(airportTableJson);
 		
@@ -87,6 +85,21 @@ public class ControllerIntegrationTest {
 		ResultMatcher content = content().json(aeroplaneJson);
 		
 		this.mvc.perform(request).andExpect(status).andExpect(content);
+	}
+	
+	@Test
+	void findByCapacity() throws Exception {
+		
+		List<Airport> airportTable = new ArrayList();
+		airportTable.add(new Airport(1, "Boeing 737-700", 149, 89.1f));
+		String airportTableJson = this.mapper.writeValueAsString(airportTable);
+		
+		RequestBuilder request = get("/findByCapacity/149");
+		ResultMatcher status = status().isOk();
+		ResultMatcher content = content().json(airportTableJson);
+		
+		this.mvc.perform(request).andExpect(status).andExpect(content);
+		
 	}
 	
 	@Test 
