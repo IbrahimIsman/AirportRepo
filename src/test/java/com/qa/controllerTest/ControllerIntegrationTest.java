@@ -41,7 +41,7 @@ public class ControllerIntegrationTest {
 	@Test
 	void AddToAirportTest() throws Exception {
 	
-		Airport aeroplane1 = new Airport("Boeing 737-700", 149, 89.1f);
+		Airport aeroplane1 = new Airport(null, "Boeing 737-700", 149, 89.1f);
 		String aeroplane1Json = this.mapper.writeValueAsString(aeroplane1);	
 				
 		Airport Savedaeroplane1 = new Airport(4, "Boeing 737-700", 149, 89.1f);
