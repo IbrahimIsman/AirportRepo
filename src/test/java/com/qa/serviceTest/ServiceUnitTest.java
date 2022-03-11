@@ -28,7 +28,7 @@ public class ServiceUnitTest {
 	@Test
 	void addAeroplaneTest() {
 	
-	    Airport planeToSave = new Airport("Boeing 737-700", 160, 89.1f);
+	    Airport planeToSave = new Airport(null, "Boeing 737-700", 160, 89.1f);
 	    Airport planeSaved = new Airport(1, "Boeing 737-700", 160, 89.1f);
 	
 	    Mockito.when(this.repo.save(planeToSave)).thenReturn(planeSaved);
@@ -43,7 +43,7 @@ public class ServiceUnitTest {
 	void getAllTest() {
 		
 		int id =1;
-		Airport plane = new Airport("Boeing 737-700", 160, 89.1f);
+		Airport plane = new Airport(null, "Boeing 737-700", 160, 89.1f);
 		plane.setId(id);
 		List<Airport> planes = List.of(plane);
 		
@@ -98,13 +98,13 @@ public class ServiceUnitTest {
 	void getByCapacityTest() {
 	
 		int Capacity =149;
-		Airport plane = new Airport("Boeing 737-700", 149, 89.1f);
+		Airport plane = new Airport(null, "Boeing 737-700", 149, 89.1f);
 		plane.setCapacity(Capacity);
 		List<Airport> planes = List.of(plane);
 		
 		Mockito.when(this.repo.findAirportByCapacitySQL(Capacity)).thenReturn(planes);
 		
-		Assertions.assertThat(this.service.findPlaneByCapacity(Capacity)).isEqualTo(plane);
+		Assertions.assertThat(this.service.findPlaneByCapacity(Capacity)).isEqualTo(planes);
 	
 		Mockito.verify(this.repo, Mockito.times(1)).findAirportByCapacitySQL(Mockito.anyInt());
 	}
@@ -113,7 +113,7 @@ public class ServiceUnitTest {
 	void updateTest() {
 		int id =1;
 		Airport plane = new Airport(1, "Boeing 737-700", 160, 89.1f);
-		Airport planeBeforeUpdate = new Airport( "Boeing 737-700", 160, 89.1f);
+		Airport planeBeforeUpdate = new Airport(null, "Boeing 737-700", 160, 89.1f);
 		Airport planeAfterUpdate = new Airport(1, "Boeing 737-700", 160, 89.1f);
 		
 		Mockito.when(this.repo.findById(id)).thenReturn(Optional.of(plane));
